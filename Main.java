@@ -1,23 +1,19 @@
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        RoubleCounter service = new RoubleCounter();
         Scanner input = new Scanner(System.in);
+        int balance = 100; // начальный баланс клиента
         System.out.println("Ваша сумма: ");
-        int summa = input.nextInt();
-        int balance = 100; // исходный баланс абонента
+        int summa = input.nextInt(); // вводим сумму пополнения
         int balance2 = balance+summa; //баланс после пополнения
-        if(summa <=100){
-            System.out.println(" Ваш баланс: "+ balance2);
+        int bonus = summa/100; // расчет бонуса за каждые 100 руб
+        if(summa >=1000){
+            System.out.println(" Вам начислен бонус: "+ bonus);
         }
 
-        int bonus = service.calculate(summa, 100);
+        System.out.println(" Ваш баланс: "+ balance2);
 
-        System.out.println("Вам начислен бонус: "+ bonus);
+
+
     }
-
-
-
-
 }
